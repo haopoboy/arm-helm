@@ -5,11 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: registry.gitlab.arm.m2m.com.tw:5000/erp3/search
-  pullPolicy: IfNotPresent
+  repository: registry.gitlab.arm.m2m.com.tw:5000/erp3/search-md
+  pullPolicy: Always
 
-imagePullSecrets:
-  - name: gitlab-registry
+imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
