@@ -8,7 +8,8 @@ image:
   repository: registry.gitlab.arm.m2m.com.tw:5000/erp3/search-md
   pullPolicy: Always
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: gitlab-registry
 nameOverride: ""
 fullnameOverride: ""
 
