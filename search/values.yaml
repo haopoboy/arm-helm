@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: registry.gitlab.arm.m2m.com.tw:5000/erp3/search
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
