@@ -36,8 +36,15 @@ spec:
               value: Asia/Taipei
             - name: LANG
               value: en_US.UTF-8
+          volumeMounts:
+            - mountPath: "/data"
+              name: mypd
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: data
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
