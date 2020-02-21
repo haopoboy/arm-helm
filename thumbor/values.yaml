@@ -24,7 +24,9 @@ serviceAccount:
 podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext: {}
+securityContext:
+  privileged: true
+
   # capabilities:
   #   drop:
   #   - ALL
