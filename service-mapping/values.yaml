@@ -31,9 +31,9 @@ service:
   port: 42
   hosts:
     - host: 192.168.0.180
-      names:
-        - erpdb
-        - erpsession
+      name: erpdb
+    - host: 192.168.0.180
+      name: erpsession
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
