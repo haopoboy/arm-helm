@@ -1,0 +1,21 @@
+{{- range .Values.service.hosts }}
+  {{- range .static-names }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ . }}
+  labels:
+    {{- include "service-mapping.labels" . | nindent 4 }}
+  annotations:
+    field.cattle.io/ipAddresses: '["{{.host}}"]'
+spec:
+  clusterIP: None
+  ports:
+    - port: {{ .Values.service.port }}
+      protocol: TCP
+  selector:
+    {{- include "service-mapping.selectorLabels" . | nindent 4 }}
+---
+  {{- end }}
+{{- end }}
+
