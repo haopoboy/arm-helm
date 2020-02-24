@@ -3,7 +3,7 @@
 {{- range $host := .Values.ingress.hosts }}
   {{- range .paths }}
   http{{ if $.Values.ingress.tls }}s{{ end }}://{{ $host.host }}{{ . }}
-  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ $host.host }}{{ . }}/unsafe/300x200/thumbor.readthedocs.io/en/latest/_images/logo-thumbor.png
+  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ $host.host }}{{ . }}unsafe/300x200/thumbor.readthedocs.io/en/latest/_images/logo-thumbor.png
   {{- end }}
 {{- end }}
 {{- else if contains "NodePort" .Values.service.type }}
