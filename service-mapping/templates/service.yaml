@@ -1,12 +1,11 @@
-{{- range .Values.service.hosts }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .name }}
+  name: erpdb
   labels:
     {{- include "service-mapping.labels" . | nindent 4 }}
   annotations:
-    field.cattle.io/ipAddresses: '["{{ .host | quote }}"]'
+    field.cattle.io/ipAddresses: '["192.168.0.180"]'
 spec:
   clusterIP: None
   ports:
@@ -15,5 +14,21 @@ spec:
   selector:
     {{- include "service-mapping.selectorLabels" . | nindent 4 }}
 ---
-{{- end }}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: erpsession
+  labels:
+    {{- include "service-mapping.labels" . | nindent 4 }}
+  annotations:
+    field.cattle.io/ipAddresses: '["192.168.0.180"]'
+spec:
+  clusterIP: None
+  ports:
+    - port: {{ .Values.service.port }}
+      protocol: TCP
+  selector:
+    {{- include "service-mapping.selectorLabels" . | nindent 4 }}
+
 
