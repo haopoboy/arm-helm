@@ -1,1 +1,1 @@
-Map all serivces on host local network
+Map all serivces on host local network, use "edit -> save" to make them work on rancher.
