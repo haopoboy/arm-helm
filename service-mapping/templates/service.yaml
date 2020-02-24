@@ -1,5 +1,5 @@
 {{- range .Values.service.hosts }}
-  {{- range .static-names }}
+{{- range .static-names }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -7,7 +7,7 @@ metadata:
   labels:
     {{- include "service-mapping.labels" . | nindent 4 }}
   annotations:
-    field.cattle.io/ipAddresses: '["{{.host}}"]'
+    field.cattle.io/ipAddresses: '["{{ .host | quote }}"]'
 spec:
   clusterIP: None
   ports:
@@ -16,6 +16,6 @@ spec:
   selector:
     {{- include "service-mapping.selectorLabels" . | nindent 4 }}
 ---
-  {{- end }}
+{{- end }}
 {{- end }}
 
