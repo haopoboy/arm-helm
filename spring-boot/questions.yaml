@@ -1,14 +1,14 @@
 questions:
   - variable: tmp.app
-      default: "ci-demo"
-      description: "Select an app"
-      type: enum
-      required: true
-      label: Boot to run
-      options:
-        - "ci-demo"
-        - "search"
-        - "project"
+    default: "ci-demo"
+    description: "Select an app"
+    type: enum
+    required: true
+    label: Boot to run
+    options:
+      - "ci-demo"
+      - "search"
+      - "project"
 
   ## Demo
   - variable: image.repository
