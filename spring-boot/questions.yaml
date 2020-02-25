@@ -26,7 +26,7 @@ questions:
     show_if: "tmp.app=search"
     required: true
     default: "registry.gitlab.arm.m2m.com.tw:5000/erp3/search-md"
-    description: "Demo"
+    description: "Search"
     type: string
     label: Image
     group: "Search"
@@ -53,6 +53,32 @@ questions:
         type: string
         required: true
         label: path
+
+  ## Project
+  - variable: image.repository
+    show_if: "tmp.app=project"
+    required: true
+    default: "registry.gitlab.arm.m2m.com.tw:5000/erp3/project-md:dev"
+    description: "Project main"
+    type: string
+    label: Image
+    group: "Project"
+
+  - variable: ingress.enabled
+    show_if: "tmp.app=project"
+    default: false
+    description: "Expose app using Layer 7 Load Balancer - ingress"
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    group: "Project"
+    show_subquestion_if: true
+    subquestions:
+      - variable: ingress.hosts[0].host
+        default: "adwords.m2m.com.tw"
+        description: "Hostname to your application"
+        type: hostname
+        required: true
+        label: "hostname"
 
 
     
