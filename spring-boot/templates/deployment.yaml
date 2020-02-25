@@ -31,15 +31,6 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
-          volumeMounts:
-            - mountPath: /app/config
-              name: config
-              readOnly: true
-          args:
-            - java -Dspring.application.json="$(cat config/spring.application.json)" -jar app.jar
-          command:
-            - /bin/sh
-            - -c
           ports:
             - name: http
               containerPort: 8080
@@ -49,12 +40,13 @@ spec:
               value: Asia/Taipei
             - name: LANG
               value: en_US.UTF-8
+            - name: SPRING_APPLICATION_JSON
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.secretName }}
+                  key: spring.application.json
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      volumes:
-      - name: config
-        secret:
-          secretName: {{ .Values.secretName }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
