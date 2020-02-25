@@ -16,6 +16,7 @@ questions:
         required: true
         default: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
         description: "Demo"
+        type: string
         show_if: "tmp.app=ci-demo"
         label: Image
         group: "Image"
