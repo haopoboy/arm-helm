@@ -33,7 +33,7 @@ questions:
 
   - variable: ingress.enabled
     show_if: "tmp.app=search"
-    default: false
+    default: true
     description: "Expose app using Layer 7 Load Balancer - ingress"
     type: boolean
     label: Expose app using Layer 7 Load Balancer
@@ -45,7 +45,8 @@ questions:
         description: "Hostname to your application"
         type: hostname
         required: true
-        label: Hostname
+        label: "ex: adwords.m2m.com.tw"
+        
       - variable: ingress.hosts[0].paths[0].path
         default: "/es"
         description: "Path"
