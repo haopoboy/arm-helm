@@ -7,5 +7,6 @@ questions:
     label: Boot to run
     group: "App"
     options:
+      - "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
       - "registry.gitlab.arm.m2m.com.tw:5000/erp4/search-md"
       - "registry.gitlab.arm.m2m.com.tw:5000/erp4/project-md:dev"
