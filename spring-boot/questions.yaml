@@ -20,4 +20,37 @@ questions:
     show_if: "tmp.app=ci-demo"
     label: Image
     group: "Demo"
+
+  ## Search
+  - variable: image.repository
+    show_if: "tmp.app=search"
+    required: true
+    default: "registry.gitlab.arm.m2m.com.tw:5000/erp3/search-md"
+    description: "Demo"
+    type: string
+    label: Image
+    group: "Search"
+
+  - variable: ingress.enabled
+    show_if: "tmp.app=search"
+    default: false
+    description: "Expose app using Layer 7 Load Balancer - ingress"
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    group: "Search"
+    subquestions:
+      - variable: ingress.hosts[0].host
+        default: "adwords.m2m.com.tw"
+        description: "Hostname to your application"
+        type: hostname
+        required: true
+        label: Hostname
+      - variable: ingress.hosts[0].paths[0].path
+        default: "/es"
+        description: "Path"
+        type: string
+        required: true
+        label: path
+
+
     
