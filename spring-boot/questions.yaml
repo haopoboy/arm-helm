@@ -1,12 +1,20 @@
 questions:
+  - variable: tmp.app
+      default: "ci-demo"
+      description: "Select an app"
+      type: enum
+      required: true
+      label: Boot to run
+      options:
+        - "ci-demo"
+        - "search"
+        - "project"
+
+  ## Demo
   - variable: image.repository
     required: true
     default: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
     description: "Select your image of Spring Boot"
-    type: enum
-    label: Boot to run
-    group: "App"
-    options:
-      - "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
-      - "registry.gitlab.arm.m2m.com.tw:5000/erp3/search-md"
-      - "registry.gitlab.arm.m2m.com.tw:5000/erp3/project-md:dev"
+    show_if: "tmp.app=ci-demo"
+    label: Image
+    group: "Image"
