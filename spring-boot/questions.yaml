@@ -5,6 +5,7 @@ questions:
     type: enum
     required: true
     label: Boot to run
+    group: "First"
     options:
       - "ci-demo"
       - "search"
@@ -18,5 +19,5 @@ questions:
     type: string
     show_if: "tmp.app=ci-demo"
     label: Image
-    group: "Image"
+    group: "Demo"
     
