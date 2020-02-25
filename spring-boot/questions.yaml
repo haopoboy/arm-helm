@@ -9,12 +9,28 @@ questions:
       - "ci-demo"
       - "search"
       - "project"
-
-  ## Demo
-  - variable: image.repository
-    required: true
-    default: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
-    description: "Select your image of Spring Boot"
-    show_if: "tmp.app=ci-demo"
-    label: Image
-    group: "Image"
+    subquestions:
+      ## Demo
+      - variable: image.repository
+        required: true
+        default: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
+        description: "Demo"
+        show_if: "tmp.app=ci-demo"
+        label: Image
+        group: "Image"
+      ## Search
+      - variable: image.repository
+        required: true
+        default: "registry.gitlab.arm.m2m.com.tw:5000/erp3/searh-md"
+        description: "Search"
+        show_if: "tmp.app=search"
+        label: Image
+        group: "Image"
+      ## Project
+      - variable: image.repository
+        required: true
+        default: "registry.gitlab.arm.m2m.com.tw:5000/erp3/project-md:dev"
+        description: "Project"
+        show_if: "tmp.app=project"
+        label: Image
+        group: "Image"
