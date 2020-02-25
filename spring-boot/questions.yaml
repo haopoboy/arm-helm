@@ -10,11 +10,3 @@ questions:
         - "search"
         - "project"
 
-  ## Demo
-  - variable: image.repository
-    required: true
-    default: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
-    description: "Select your image of Spring Boot"
-    show_if: "tmp.app=ci-demo"
-    label: Image
-    group: "Image"
