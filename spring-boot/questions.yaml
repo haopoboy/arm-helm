@@ -38,6 +38,7 @@ questions:
     type: boolean
     label: Expose app using Layer 7 Load Balancer
     group: "Search"
+    show_subquestion_if: true
     subquestions:
       - variable: ingress.hosts[0].host
         default: "adwords.m2m.com.tw"
