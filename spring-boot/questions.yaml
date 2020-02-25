@@ -9,6 +9,7 @@ questions:
       - "ci-demo"
       - "search"
       - "project"
+    show_subquestion_if: true
     subquestions:
       ## Demo
       - variable: image.repository
