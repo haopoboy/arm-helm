@@ -32,5 +32,23 @@ spec:
       protocol: TCP
   selector:
     {{- include "service-mapping.selectorLabels" . | nindent 4 }}
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: erpes
+  labels:
+    {{- include "service-mapping.labels" . | nindent 4 }}
+  annotations:
+    field.cattle.io/ipAddresses: '["192.168.0.180"]'
+spec:
+  clusterIP: None
+  ports:
+    - name: default
+      port: {{ .Values.service.port }}
+      protocol: TCP
+  selector:
+    {{- include "service-mapping.selectorLabels" . | nindent 4 }}
 
 
