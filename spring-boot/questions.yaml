@@ -8,5 +8,5 @@ questions:
     group: "App"
     options:
       - "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
-      - "registry.gitlab.arm.m2m.com.tw:5000/erp4/search-md"
-      - "registry.gitlab.arm.m2m.com.tw:5000/erp4/project-md:dev"
+      - "registry.gitlab.arm.m2m.com.tw:5000/erp3/search-md"
+      - "registry.gitlab.arm.m2m.com.tw:5000/erp3/project-md:dev"
