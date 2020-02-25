@@ -1,0 +1,11 @@
+questions:
+  - variable: image.repository
+    required: true
+    default: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
+    description: "Select your image of Spring Boot"
+    type: enum
+    label: Boot to run
+    group: "App"
+    options:
+      - "registry.gitlab.arm.m2m.com.tw:5000/erp4/search-md"
+      - "registry.gitlab.arm.m2m.com.tw:5000/erp4/project-md:dev"
