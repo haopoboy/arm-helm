@@ -47,7 +47,7 @@ questions:
         required: true
         label: "hostname"
         
-      - variable: ingress.hosts[0].paths[0].path
+      - variable: ingress.hosts[0].paths[0]
         default: "/es"
         description: "Path"
         type: string
