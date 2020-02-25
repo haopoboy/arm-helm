@@ -7,9 +7,10 @@ replicaCount: 1
 image:
   repository: registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo
   pullPolicy: Always
+imagePullSecrets:
+  - name: gitlab-registry
 
-imagePullSecrets: []
-# Manual create your secret and the key named spring.application.json.
+# Manual create your secret and the key named spring.application.json
 # See also: https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config
 secretName: spring 
 
