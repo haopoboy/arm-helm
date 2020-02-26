@@ -1,4 +1,3 @@
-namespace: arm
 questions:
   - variable: es.url
     default: https://erpes:9200
@@ -23,10 +22,21 @@ questions:
         type: hostname
         required: true
         label: "hostname"
+      - variable: ingress.hosts[0q].path
+        default: "/"
+        type: string
+        required: true
+        label: "path"
+
       - variable: ingress.hosts[1].host
         default: "kibana.coffee.arm.m2m.com.tw"
         description: "Hostname to your application for coffee"
         type: hostname
         required: true
         label: "hostname"
+      - variable: ingress.hosts[1].path
+        default: "/"
+        type: string
+        required: true
+        label: "path"
 
