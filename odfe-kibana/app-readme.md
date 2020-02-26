@@ -8,7 +8,7 @@ ingress:
   enabled: true
   hosts: 
     - host: "kibana.arm.m2m.com.tw"
-      path: "/"
+      paths: ["/"]
     - host: "kibana.coffee.arm.m2m.com.tw"
-      path: "/"
+      paths: ["/"]
 ```
