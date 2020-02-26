@@ -61,7 +61,7 @@ questions:
         
       - variable: ingress.hosts[0].paths[0]
         show_if: "tmp.app=sso"
-        default: "/es"
+        default: "/sso"
         description: "Path"
         type: string
         required: true
