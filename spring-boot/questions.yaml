@@ -1,16 +1,22 @@
 questions:
   - variable: tmp.app
-    default: "ci-demo"
-    description: "Select an app"
+    default: ci-demo
+    description: Boot to run
     type: enum
     required: true
-    label: Boot to run
-    group: "First"
+    label: Select an app
+    group: First
     options:
-      - "ci-demo"
-      - "search"
-      - "sso"
-      - "project"
+      - ci-demo
+      - search
+      - sso
+      - project
+  - variable: secretName
+    default: spring
+    type: secret
+    required: true
+    label: Select a secret
+    group: First
 
   ## Demo
   - variable: image.repository
@@ -116,6 +122,3 @@ questions:
         type: hostname
         required: true
         label: "hostname"
-
-
-    
