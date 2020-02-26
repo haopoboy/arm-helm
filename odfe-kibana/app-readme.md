@@ -2,13 +2,13 @@
 
 ```yaml
 es: 
-url: "https://erpes:9200"
-secretName: "odfe"
+  url: "https://erpes:9200"
+  secretName: "odfe"
 ingress: 
-enabled: true
-hosts: 
-  - host: "kibana.arm.m2m.com.tw"
-    path: "/"
-  - host: "kibana.coffee.arm.m2m.com.tw"
-    path: "/"
+  enabled: true
+  hosts: 
+    - host: "kibana.arm.m2m.com.tw"
+      path: "/"
+    - host: "kibana.coffee.arm.m2m.com.tw"
+      path: "/"
 ```
