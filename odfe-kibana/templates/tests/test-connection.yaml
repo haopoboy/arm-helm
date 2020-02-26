@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "odfe-kibana.fullname" . }}-test-connection"
+  labels:
+    {{- include "odfe-kibana.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "odfe-kibana.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

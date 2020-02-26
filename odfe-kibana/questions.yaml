@@ -1,0 +1,32 @@
+namespace: arm
+questions:
+  - variable: es.url
+    default: https://erpes:9200
+    type: string
+    label: Elasticsearch URL and HOST
+
+  - variable: secretName
+    default: odfe
+    type: secret
+    label: Select a secret
+    
+  - variable: ingress.enabled
+    default: true
+    description: "Expose app using Layer 7 Load Balancer - ingress"
+    type: boolean
+    label: Expose app using Layer 7 Load Balancer
+    show_subquestion_if: true
+    subquestions:
+      - variable: ingress.hosts[0].host
+        default: "kibana.arm.m2m.com.tw"
+        description: "Hostname to your application for primary"
+        type: hostname
+        required: true
+        label: "hostname"
+      - variable: ingress.hosts[1].host
+        default: "kibana.coffee.arm.m2m.com.tw"
+        description: "Hostname to your application for coffee"
+        type: hostname
+        required: true
+        label: "hostname"
+
