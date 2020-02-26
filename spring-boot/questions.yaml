@@ -9,6 +9,7 @@ questions:
     options:
       - "ci-demo"
       - "search"
+      - "sso"
       - "project"
 
   ## Demo
@@ -31,17 +32,27 @@ questions:
     label: Image
     group: "Search"
 
+  ## SSO
+  - variable: image.repository
+    show_if: "tmp.app=sso"
+    required: true
+    default: "registry.gitlab.arm.m2m.com.tw:5000/erp3/sso-md"
+    description: "SSO"
+    type: string
+    label: Image
+    group: "SSO"
+
   - variable: ingress.enabled
-    show_if: "tmp.app=search"
+    show_if: "tmp.app=sso"
     default: true
     description: "Expose app using Layer 7 Load Balancer - ingress"
     type: boolean
     label: Expose app using Layer 7 Load Balancer
-    group: "Search"
+    group: "SSO"
     show_subquestion_if: true
     subquestions:
       - variable: ingress.hosts[0].host
-        show_if: "tmp.app=search"
+        show_if: "tmp.app=sso"
         default: "adwords.m2m.com.tw"
         description: "Hostname to your application"
         type: hostname
@@ -49,7 +60,7 @@ questions:
         label: "hostname"
         
       - variable: ingress.hosts[0].paths[0]
-        show_if: "tmp.app=search"
+        show_if: "tmp.app=sso"
         default: "/es"
         description: "Path"
         type: string
