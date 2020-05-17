@@ -36,11 +36,13 @@ spec:
               value: Asia/Taipei
             - name: LANG
               value: en_US.UTF-8
+            {{- if .Values.secretName }}
             - name: SPRING_APPLICATION_JSON
               valueFrom:
                 secretKeyRef:
                   name: {{ .Values.secretName }}
                   key: spring.application.json
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
