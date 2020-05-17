@@ -12,7 +12,7 @@ imagePullSecrets:
 
 # Manual create your secret and the key named spring.application.json
 # See also: https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config
-secretName: spring 
+secretName: "" 
 
 nameOverride: ""
 fullnameOverride: ""

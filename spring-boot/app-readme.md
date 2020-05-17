@@ -3,7 +3,6 @@ Select an answer
 
 ### Demo
 ```yaml
-secretName: "spring"
 image: 
   repository: "registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo"
 ```
