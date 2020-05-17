@@ -32,9 +32,6 @@ spec:
             - name: http
               containerPort: 8000
               protocol: TCP
-          env:
-            - name: HEALTHCHECK_ROUTE
-              value: "/"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
