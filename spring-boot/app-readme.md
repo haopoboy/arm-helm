@@ -18,7 +18,7 @@ ingress:
     hosts: 
       - host: "adwords.m2m.com.tw"
         paths: ["/sso"]
-      - host: "adwords.coffee.m2m.com.tw"
+      - host: "dev.arm.m2m.com.tw"
         paths: ["/sso"]
 ```
 
@@ -32,7 +32,7 @@ ingress:
     hosts: 
       - host: "adwords.m2m.com.tw"
         paths: ["/es"]
-      - host: "adwords.coffee.m2m.com.tw"
+      - host: "dev.arm.m2m.com.tw"
         paths: ["/es"]
 ```
 
@@ -46,6 +46,6 @@ ingress:
     hosts: 
       - host: "adwords.m2m.com.tw"
         paths: ["/"]
-      - host: "adwords.coffee.m2m.com.tw"
+      - host: "dev.arm.m2m.com.tw"
         paths: ["/"]
 ```
