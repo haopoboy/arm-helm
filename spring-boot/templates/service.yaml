@@ -1,21 +1,15 @@
-{{- $fullName := include "spring-boot.fullname" . -}}
-{{- $labels := include "spring-boot.labels" . | nindent 4 }}
-{{- $selectors := include "spring-boot.selectorLabels" . | nindent 4 }}
-{{- range $bgName := .Values.blueGreenNames }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ $fullName }}-{{ $bgName }}
+  name: {{ include "spring-boot.fullname" . }}
   labels:
-    {{- $labels }}
+    {{- include "spring-boot.labels" . | nindent 4 }}
 spec:
-  type: {{ $.Values.service.type }}
+  type: {{ .Values.service.type }}
   ports:
-    - port: {{ $.Values.service.port }}
-      targetPort: http-{{$bgName}}
+    - port: {{ .Values.service.port }}
+      targetPort: http
       protocol: TCP
       name: http
   selector:
-    {{- $selectors }}
----
-{{- end }}
+    {{- include "spring-boot.selectorLabels" . | nindent 4 }}

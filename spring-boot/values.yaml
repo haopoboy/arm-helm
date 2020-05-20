@@ -4,10 +4,6 @@
 
 replicaCount: 1
 
-blueGreenNames:
-  - coffee
-  - tea
-
 image:
   repository: registry.gitlab.arm.m2m.com.tw:5000/erp4/ci-demo
   pullPolicy: Always
@@ -46,7 +42,7 @@ service:
   port: 80
 
 ingress:
-  enabled: true
+  enabled: false
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"

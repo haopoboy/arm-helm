@@ -34,7 +34,7 @@ spec:
         {{- range .paths }}
           - path: {{ . }}
             backend:
-              serviceName: {{ $fullName }}-{{ index .Values.blueGreenNames 0 }}
+              serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
         {{- end }}
   {{- end }}
